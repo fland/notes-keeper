@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 public class HelloWorld {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
+    public String getMessage() {
         return "Got it!";
     }
 }
