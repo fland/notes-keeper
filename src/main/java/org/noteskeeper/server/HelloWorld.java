@@ -9,9 +9,10 @@ public class HelloWorld {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getMessage(@QueryParam("name") String name) {
-        if(name == null)
-            return "Hello, Anonimus!";
-        else
-            return "Hello, "+ name;
+        if (name == null && name.isEmpty()) {
+            return "Hello, Anonymous!";
+        } else {
+            return "Hello, " + name;
+        }
     }
 }
