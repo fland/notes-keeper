@@ -13,7 +13,7 @@ public class GreetingServiceTest {
 
     @Test
     public void greetGreetsAnonymousWhenPassedNullOrEmptyName() {
-        String expectedGreeting = "Hello, Anonymous!";
+        String expectedGreeting = "Hello, Anonymous";
         assertEquals("",expectedGreeting, service.greet(null));
         assertEquals("",expectedGreeting, service.greet(""));
     }
