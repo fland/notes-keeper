@@ -5,6 +5,7 @@ package org.noteskeeper.server;
  */
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class GreetingServiceTest {
@@ -14,13 +15,13 @@ public class GreetingServiceTest {
     @Test
     public void greetGreetsAnonymousWhenPassedNullOrEmptyName() {
         String expectedGreeting = "Hello, Anonymous";
-        assertEquals("",expectedGreeting, service.greet(null));
-        assertEquals("",expectedGreeting, service.greet(""));
+        assertEquals(expectedGreeting, service.greet(null));
+        assertEquals(expectedGreeting, service.greet(""));
     }
 
     @Test
     public void greetGreetsUserWhenPassedName() {
         String expectedGreeting = "Hello, Ivan";
-        assertEquals("",expectedGreeting, service.greet("Ivan"));
+        assertEquals(expectedGreeting, service.greet("Ivan"));
     }
 }
