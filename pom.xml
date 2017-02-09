@@ -23,11 +23,13 @@
             <version>2.25</version>
         </dependency>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>       <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.4.RELEASE</version>
-        </dependency>
-    </dependencies>
+        </dependency>   </dependencies>
 
     <build>
         <plugins>
