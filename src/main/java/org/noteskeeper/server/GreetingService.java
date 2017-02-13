@@ -7,7 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class GreetingService implements IGreetingService{
 
-    public GreetingService(){}
+    public GreetingService(){
+        System.out.println("GreetingService Constructor");
+    }
 
     @Override
     public String greet(String name){
