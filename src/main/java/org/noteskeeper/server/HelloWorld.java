@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
 public class HelloWorld {
 
     @Autowired
-    private  IGreetingService greetingService ;//= new GreetingService() ;
+    private  IGreetingService greetingService;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
