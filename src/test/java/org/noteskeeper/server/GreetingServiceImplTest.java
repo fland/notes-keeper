@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class GreetingServiceTest {
+public class GreetingServiceImplTest {
 
-    private GreetingService service = new GreetingService();
+    private GreetingServiceImpl service = new GreetingServiceImpl();
 
     @Test
     public void greetGreetsAnonymousWhenPassedNullOrEmptyName() {
