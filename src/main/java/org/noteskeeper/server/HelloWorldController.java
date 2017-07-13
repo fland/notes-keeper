@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(path="/api")
-public class HelloWorld {
+public class HelloWorldController {
 
     @Autowired
     private GreetingService greetingService;
