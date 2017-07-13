@@ -1,21 +1,21 @@
 package org.noteskeeper.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-
-@Component
-@Path("/hello")
+@Controller
+@RequestMapping(path="/api")
 public class HelloWorld {
 
     @Autowired
     private GreetingService greetingService;
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getMessage(@QueryParam("name") String name) {
+    @GetMapping(path="/hello")
+    public @ResponseBody String getMessage(@RequestParam(required=false) String name) {
         return greetingService.greet(name);
     }
 }
