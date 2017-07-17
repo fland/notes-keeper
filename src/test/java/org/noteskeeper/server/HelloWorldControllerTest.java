@@ -9,10 +9,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -20,24 +19,13 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class HelloWorldControllerTest {
-    @Configuration
-    static class HelloWorldControllerTestConfiguration {
-        @Bean
-        public GreetingService greetingService() {
-            return Mockito.mock(GreetingServiceImpl.class);
-        }
-        @Bean
-        public HelloWorldController helloWorldController() {
-            return new HelloWorldController();
-        }
-    }
 
     @Autowired
     private HelloWorldController helloWorldController;
-    @Autowired
+    @MockBean
     private GreetingService greetingServiceMock;
     private MockMvc mockMvc;
 
